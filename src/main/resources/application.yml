@@ -1,0 +1,11 @@
+spring:
+  #配置数据源
+  datasource:
+    url: jdbc:mysql://172.40.2.123:3306/order_uat?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: api2018
+  #关闭热部署
+  devtools:
+    restart:
+      enabled: false
