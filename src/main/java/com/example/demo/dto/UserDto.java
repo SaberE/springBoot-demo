@@ -1,4 +1,4 @@
-package com.example.demo.pojo;
+package com.example.demo.dto;
 
 import java.io.Serializable;
 
@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class User implements Serializable{
+public class UserDto implements Serializable{
 	
-	private String name;
+	private String username;
 	
 	private String age;
 	

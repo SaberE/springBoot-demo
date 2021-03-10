@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.pojo.User;
-import com.example.demo.service.BseDaoService;
+import com.example.demo.dto.UserDto;
+import com.example.demo.service.TestDaoService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
@@ -14,16 +14,16 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 public class HelloController {
 
 	@Autowired
-	BseDaoService bseDaoService;
+	TestDaoService bseDaoService;
 	
 	@RequestMapping({"/hello", "/helloWorld"})
 	String hello() {
 		return "hello!";
 	}  
 	
-	@RequestMapping({"/queryInvoices"})
-	User queryInvoices() throws JsonMappingException, JsonProcessingException {
-		User user = bseDaoService.selectOne(new User());
+	@RequestMapping({"/admin"})
+	UserDto queryInvoices() throws JsonMappingException, JsonProcessingException {
+		UserDto user = bseDaoService.selectOne(new UserDto());
 		return user;
 	}  
 }
