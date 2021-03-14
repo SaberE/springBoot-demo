@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.UserMapper">
+	
+	
+	<resultMap id="userDomainResultMap" type="com.example.demo.model.UserDomain" >
+		<id property="uid" column="uid" jdbcType="INTEGER" />
+		<result property="invalidFlag" column="INVALID_FLAG" jdbcType="VARCHAR" />
+		<result property="createdDate" column="CREATED_DATE" jdbcType="TIMESTAMP"/>
+		<result property="updatedDate" column="UPDATED_DATE" jdbcType="TIMESTAMP"/>
+		<result property="createdUser" column="CREATED_USER" jdbcType="VARCHAR"/>
+		<result property="updatedUser" column="UPDATED_USER" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	
+	<sql id="BASE_TABLE">
+		t_user_user
+	</sql>
+	
+	<sql id="BASE_COLUMN">
+		UID, USERNAME, PASSWORD, NICKNAME, EMAIL, AGE, SEX, INVALID_FLAG, CREATED_DATE, UPDATED_DATE, CREATED_USER, UPDATED_USER
+	</sql>
+	
+	<select id="getUserInfoByCond" resultMap="userDomainResultMap">
+		SELECT 
+		<include refid="BASE_COLUMN"/>
+		FROM 
+		<include refid="BASE_TABLE"/>
+		<where>
+			<if test="username != null">
+				and username = #{username, jdbcType=VARCHAR}
+			</if>
+			<if test="password != null">
+				and password = #{password, jdbcType=VARCHAR}
+			</if>
+		</where>
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

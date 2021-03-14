@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class UserDto implements Serializable{
-	
 	private String username;
 	
 	private String age;
