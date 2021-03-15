@@ -1,20 +1,11 @@
 package com.example.demo.dto;
 
-import java.io.Serializable;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.example.demo.model.UserDomain;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
-public class UserDto implements Serializable{
-	private String username;
+
+public class UserDto extends UserDomain{
+
 	
-	private String age;
-	
-	private String email;
-
 	
 }

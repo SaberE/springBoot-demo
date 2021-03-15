@@ -5,12 +5,13 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
-  #关闭热部署
+  #热部署
   devtools:
     restart:
       enabled: true
       
 mybatis:
+  # 指定**mapper.xml的位置，默认在使用@mapper标注的Java类同级目录下
   mapper-locations:
   - classpath:mapper/*.xml
   type-aliases-package: com.example.demo.model
