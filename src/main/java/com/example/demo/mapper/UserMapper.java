@@ -1,16 +1,14 @@
 package com.example.demo.mapper;
 
+
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Component;
 
 import com.example.demo.model.UserDomain;
 
 
-
-@Mapper
-@Component
-public interface UserMapper {
+@Mapper //声明这是一个mapper
+public interface UserMapper extends tk.mybatis.mapper.common.Mapper<UserDomain>{
 
 	UserDomain getUserInfoByCond(@Param("username") String username, @Param("password") String password);
 	

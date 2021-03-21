@@ -19,3 +19,9 @@ mybatis:
 logging:
   level:
     com.example.demo.mapper: debug
+
+#通用mapper配置
+mapper:
+  mappers:
+  - tk.mybatis.mapper.common.Mapper
+  not-empty: true
